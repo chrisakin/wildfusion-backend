@@ -4,11 +4,12 @@ const checkJWT = require('../middleware/check-jwt');
 const aws = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
+require('dotenv').config()
 
 
 aws.config.update({
-  secretAccessKey: "VFSpc7Ylsqkupy2UYa0fii1w96MTIGwy72ff6+ZI",
-  accessKeyId: "AKIAJ62OLW7YDJE6RFEA",
+  secretAccessKey: process.env.secretAccessKey,
+  accessKeyId: process.env.accessKeyId,
   region: "eu-west-1"
 });
 
