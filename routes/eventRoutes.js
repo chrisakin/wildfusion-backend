@@ -31,5 +31,8 @@ var upload = multer({
 
 router.post('/', [upload.single('file')], (eventController.postEvents));
 router.get('/', eventController.getEvents);
+router.post('/book', eventController.bookEvents);
+router.post('/view', eventController.viewEvents);
+router.put('/edit/:id', eventController.editEvents);
 
 module.exports = router;
